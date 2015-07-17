@@ -35,10 +35,10 @@
             <div class="answers-list" id="item1">
                 <!-- Needs to be multiple choice where either one or more is selectable -->
                 <div class="list">
-                    <input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
-                    <input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                    <i class="fa fa-square-o"></i><i class="fa fa-check-square-o" style="display:none;"></i><input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                    <i class="fa fa-square-o"></i><i class="fa fa-check-square-o" style="display:none;"></i><input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
                 </div>
-                <button onClick="addAnswer(this.parentElement)">add more options</button>
+                <button onClick="addAnswer(this.parentElement)">add</button><button onClick="addAnswer(this.parentElement)">remove</button>
             </div>
         </div>
     </li>
@@ -53,10 +53,10 @@
             <div class="answers-list" id="item2">
                 <!-- Needs to be multiple choice where either one or more is selectable -->
                 <div class="list">
-                    <input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
-                    <input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                    <i class="fa fa-square-o"></i><i class="fa fa-check-square-o" style="display:none;"></i><input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                    <i class="fa fa-square-o"></i><i class="fa fa-check-square-o" style="display:none;"></i><input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
                 </div>
-                <button onClick="addAnswer(this.parentElement)">add more options</button>
+                <button onClick="addAnswer(this.parentElement)">add</button><button onClick="addAnswer(this.parentElement)">remove</button>
             </div>
         </div>
     </li>
@@ -94,7 +94,6 @@
             </table>
         </div>
     </li>
-
 
     <!-- True or False -->
     <li class="survey-question ui-state-default" id='item4'>
@@ -152,6 +151,16 @@
     $('.fa-angle-down').on('click', function() {
         $(this).parent().parent().children('div').eq(1).slideDown(400);
         $(this).hide().siblings('.fa-angle-up').show();
+    });
+
+    // Checkbox toggle
+    $(".fa-square-o").on("click", function() {
+        $(this).parent().parent().children('div').eq(1).slideUp(400);
+        $(this).hide().siblings('.fa-check-square-o').show();
+    });
+    $('.fa-check-square-o').on('click', function() {
+        $(this).parent().parent().children('div').eq(1).slideDown(400);
+        $(this).hide().siblings('.fa-square-o').show();
     });
 
 
@@ -218,36 +227,36 @@
         }
         else if (questionType == "likert") {
             $('#sortable1').append('<li class="survey-question ui-state-default" id="item4">'
-                + '<div class="question">'
-                + '<i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>'
-                + '</div>'
-                + '<div class="answers">'
-                + '<table class="">'
-                + '<thead>'
-                + '<tr>'
-                + '<th></th>'
-                + '<th>1</th>'
-                + '<th>2</th>'
-                + '<th>3</th>'
-                + '<th>4</th>'
-                + '<th>5</th>'
-                + '<th></th>'
-                + '</tr>'
-                + '</thead>'
-                + '<tbody>'
-                + '<tr>'
-                + '<td>least?</td>'
-                + '<td><input type="radio" value="1" name="something"/></td>'
-                + '<td><input type="radio" value="2" name="something"/></td>'
-                + '<td><input type="radio" value="3" name="something"/></td>'
-                + '<td><input type="radio" value="4" name="something"/></td>'
-                + '<td><input type="radio" value="5" name="something"/></td>'
-                + '<td>most</td>'
-                + '</tr>'
-                + '</tbody>'
-                + '</table>'
-                + '</div>'
-                + '</li>');
+                    + '<div class="question">'
+                    + '<i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>'
+                    + '</div>'
+                    + '<div class="answers">'
+                    + '<table class="">'
+                    + '<thead>'
+                    + '<tr>'
+                    + '<th></th>'
+                    + '<th>1</th>'
+                    + '<th>2</th>'
+                    + '<th>3</th>'
+                    + '<th>4</th>'
+                    + '<th>5</th>'
+                    + '<th></th>'
+                    + '</tr>'
+                    + '</thead>'
+                    + '<tbody>'
+                    + '<tr>'
+                    + '<td>least?</td>'
+                    + '<td><input type="radio" value="1" name="something"/></td>'
+                    + '<td><input type="radio" value="2" name="something"/></td>'
+                    + '<td><input type="radio" value="3" name="something"/></td>'
+                    + '<td><input type="radio" value="4" name="something"/></td>'
+                    + '<td><input type="radio" value="5" name="something"/></td>'
+                    + '<td>most</td>'
+                    + '</tr>'
+                    + '</tbody>'
+                    + '</table>'
+                    + '</div>'
+                    + '</li>');
         }
     }
 
@@ -256,7 +265,7 @@
 
         //get index
 
-        $(answerList).children('.list').append('<input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br/>');
+        $(answerList).children('.list').append('<i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i><input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br/>');
     }
 
     function buildAnswer() {
