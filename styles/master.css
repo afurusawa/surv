@@ -1,6 +1,6 @@
 @font-face {
     font-family: Gotham-Book;
-    src: url(fonts/Gotham/Gotham-Book.otf);
+    src: 'fonts/Gotham/Gotham-Book.otf';
 }
 
 html, body
@@ -24,6 +24,8 @@ a {
 /* Sidebar */
 .sidebar {
 	height: 100%;
+	position: fixed !important;
+	overflow-y: auto;
 	background-color: #211e20;
 	color: #aeb6b8;
 	font-family: Gotham-Book, Arial, sans-serif;
@@ -59,11 +61,15 @@ a {
 	border-bottom: 1px solid #424041;
 }
 
+/* Nav Bar */
+
+
 /* Main Content */
-.main-content-top {
+.main-content-separator {
 
 }
 
 .main-content {
-
+	margin-left: 25%;
+	padding: 0 !important;
 }
