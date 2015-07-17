@@ -2,7 +2,7 @@
 
 /*** basic styles ***/
 
-body { margin: 30px; }
+//body { margin: 30px; }
 h1 { font-size: 1.5em; }
 label { font-size: 24px; }
 div {
@@ -51,4 +51,12 @@ ul
 }
 i {
     padding: 5px;
+}
+
+
+
+
+/* master page */ 
+.sidebar {
+
 }
