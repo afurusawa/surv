@@ -8,10 +8,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/master.css"/>
     <link rel="stylesheet" href="styles/font-awesome-4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-3.3.5-dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
 </head>
 <body>
+    <span style="font-family: Gotham-Light;">What the fuck is going on</span>
     <div class="container-fluid fill">
       <div class="row fill">
         
@@ -31,17 +32,25 @@
         <div class="col-xs-9 main-content">
           
           <!-- Nav tabs -->
-          <ul class="nav nav-tabs" role="tablist" id="myTabs">
-            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Questions Pool</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Templates</a></li>
+          <ul class="nav nav-tabs nopadding" role="tablist" id="navbar">
+            <li role="presentation" class="active">
+              <a href="#question-pool" aria-controls="question-pool" role="tab" data-toggle="tab">
+                <span>Questions Pool</span>
+              </a>
+            </li>
+            <li role="presentation">
+              <a class="disable" href="#question-pool" aria-controls="question-pool" role="tab" data-toggle="tab">
+                <span>Templates</span>
+              </a>
+            </li>
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">...</div>
-            <div role="tabpanel" class="tab-pane" id="profile">
+            <div role="tabpanel" class="tab-pane active" id="question-pool">
               what <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>what<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>lkj<br/><br/><br/><br/><br/><br/><br/>vlkj<br/><br/><br/><br/><br/><br/><br/><br/><br/>l;kj<br/>
             </div>
+            
           </div>
         </div>
 
@@ -52,8 +61,7 @@
     <script src="scripts/jquery-ui-1.11.4/jquery-ui.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script>
-      $('#myTabs a:first').tab('show') // Select first tab
-      $('#myTabs a:last').tab('show') // Select last tab
+      $('#navbar a:first').tab('show') // Select first tab
     </script>
 </body>
 </html>
