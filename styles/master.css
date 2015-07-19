@@ -74,11 +74,13 @@ a {
 	width: 100%;
 	position: fixed !important;
 	background: #ffffff;
+	padding: 0 25px;
+	margin: 0;
 }
 #navbar li {
 	height: 100px;
 	border: 0px;
-	padding: 0 25px;
+	margin: 0 25px;
 }
 #navbar li a {
 	padding: 0;
@@ -107,10 +109,6 @@ a {
 }
 
 /* Main Content */
-.main-content-separator {
-
-}
-
 .main-content {
 	margin-left: 25%;
 	padding: 0 !important;
