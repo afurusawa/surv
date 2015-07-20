@@ -26,7 +26,7 @@
                     <div class="col-xs-8 question-type">
                         <h1>Type:</h1>
                         <div>
-                            <select id="question-type">
+                            <select id="question-type" onchange="console.log(this.value)">
                                 <option value="single" selected>Single Answer</option>
                                 <option value="choose">Choose Any</option>
                                 <option value="tf">True or False</option>
@@ -87,19 +87,6 @@
             <button>+ Add Question</button>
         </div>
     </div>
-
-<div class="mode-selector">
-    <!-- Mode: select one, multiple answers -->
-    <p>select type</p>
-    <select id="question-type">
-        <option value="single">Single Answer</option>
-        <option value="choose">Choose All That Apply</option>
-        <option value="likert">Likert Scale</option>
-        <option value="tf">True or False</option>
-        <option value="yn">Yes or No</option>
-    </select>
-    <button id="addQuestion">add</button>
-</div>
 
 
 <ul id="sortable1" class="connectedSortable">

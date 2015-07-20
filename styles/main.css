@@ -121,7 +121,7 @@ i {
 .question-type div {
     display: inline;
     width: 120px;
-    background: url(../assets/down-arrow-8.png) no-repeat right transparent;
+    background: url(../assets/down-arrow.png) no-repeat right transparent;
 }
 .question-type select {
     background: transparent;
@@ -166,7 +166,7 @@ i {
 
 .question-add {
     width: 100%;
-    padding: 0 40px;
+    padding: 0 40px 40px 40px;
 }
 .question-add button {
     border-radius: 3px;
