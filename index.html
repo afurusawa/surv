@@ -226,7 +226,7 @@
 <script>
     
     $(document).ready(function() {
-
+        $.expanding.initialSelector = "textarea";
         // By default, show multiple-choice and hide the rest.
         $(".single-answer").show().addClass("active").siblings().removeClass("active").hide();
 
@@ -244,15 +244,15 @@
             }
         });
 
-
-        $(".answer-add").on("click", function() {
+        // Add answer option to corresponding question
+        $(".answer-add button").on("click", function() {
             //console.log($(this).parents(".question").attr('id'));
             var index = parseInt($(this).parents(".question").find(".answer-body").find(".active").find(".answer-text").last().attr("id")) + 1;
             console.log("adding to index: " + index);
             
             var answer = 
                 $('<div/>', {
-                    class: 'answer-text', 
+                    class: 'row answer-text', 
                     id: index
                 })
                 .append(
@@ -277,7 +277,7 @@
                     })
                     .append(
                         $('<h1/>', {
-                            text: 'Weight '
+                            text: 'Weight'
                         })
                     )
                     .append(
@@ -287,40 +287,26 @@
                             value: '0'
                         })
                     )
+                )
+                .append(
+                    $('<div/>', {
+                        class: 'col-xs-1 answer-delete nopadding'
+                    })
+                    .append(
+                        $('<i/>', {
+                            class: 'fa fa-times-circle-o'
+                        })
+                    )
                 );
 
-            $(this).parents(".question").find(".answer-body").find(".active").append(answer);            
+                var separator =
+                    $('<div/>', {
+                        class: 'row answer-separator nopadding'
+                    });
+
+            $(this).parents(".question").find(".answer-body").find(".active").append(answer).append(separator);
+            $(this).parents(".question").find(".answer-body").find(".active").find("textarea").last().expanding();            
         });
-
-
-
-                            // <div class="row answer-text" id="2">
-                            //     <div class="col-xs-9 nopadding">
-                            //         <h1>Answer 2</h1>
-                            //         <textarea class="expanding" placeholder="Type answer here"></textarea>
-                            //     </div>
-                            //     <div class="col-xs-2 answer-weight nopadding">
-                            //         <h1>Weight</h1>
-                            //         <input type="text" placeholder="#" value="0">
-                            //     </div>
-                            //     <div class="col-xs-1 answer-delete nopadding">
-                            //         <i class="fa fa-times-circle-o"></i>
-                            //     </div>
-                            // </div>
-                            // <div class="row answer-separator nopadding"></div>
-
-
-        // var answer = 
-        //     $('<div/>', {
-        //         class: 'answer-text', 
-        //         id: index
-        //     })
-        //     .append(
-        //         $('<div/>', {
-        //         class: 'col-xs-9 nopadding', 
-        //         id: index
-        //     });
-
     });
 
     
@@ -351,17 +337,6 @@
         $(this).hide().siblings('.fa-angle-up').show();
     });
 
-    // Checkbox toggle
-    $(".fa-square-o").on("click", function() {
-        $(this).parent().parent().children('div').eq(1).slideUp(400);
-        $(this).hide().siblings('.fa-check-square-o').show();
-    });
-    $('.fa-check-square-o').on('click', function() {
-        $(this).parent().parent().children('div').eq(1).slideDown(400);
-        $(this).hide().siblings('.fa-square-o').show();
-    });
-
-
     $('#addSurvey').click(function() {
         console.log('adding new survey to list');
 
@@ -384,10 +359,6 @@
     //document.getElementById("myText").readOnly = true;
 
 
-    $('#addQuestion').on("click", function() {
-        console.log($("#question-type option:selected").val());
-        createQuestion($("#question-type option:selected").val());
-    })
 
 
     function createQuestion(questiontype) {
@@ -456,18 +427,6 @@
                     + '</div>'
                     + '</li>');
         }
-    }
-
-    // need to get the id of the 'li' so I can add to the answer-list
-    function addAnswer(answerList) {
-
-        //get index
-
-        $(answerList).children('.list').append('<i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i><input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br/>');
-    }
-
-    function buildAnswer() {
-        var result = document.createElement()
     }
 
 </script>
