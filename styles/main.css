@@ -33,6 +33,9 @@ html, body
    padding: 0 !important;
    margin: 0 !important;
 }
+.hide {
+    display: none;
+}
 a {
     text-decoration:;
 }
@@ -178,6 +181,9 @@ i {
     text-transform: uppercase;
 }
 
+.answer-body {
+    background-color: #ffffff;
+}
 
 .answer-text {
     margin: 0 !important;
