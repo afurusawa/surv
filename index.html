@@ -306,7 +306,11 @@
         });
 
         //todo: delete answer and re-index answer list
+        $(".question-pool").on("click", ".answer-delete i", function() {
+            //save parent object
 
+            $(this).parents(".answer-text").remove();
+        });
 
 
         // Add question to question pool
