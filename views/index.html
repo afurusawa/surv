@@ -6,10 +6,10 @@
 
     <title>Ventari Questionnaire Manager</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/main.css"/>
-    <link rel="stylesheet" href="styles/font-awesome-4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/bootstrap-3.3.5-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="styles/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../styles/main.css"/>
+    <link rel="stylesheet" href="../styles/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../styles/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
 
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div class="question-pool">
         <div class="row question nopadding" id="1">
             <div class="col-xs-12 nopadding">
-                
+
                 <!-- Question/Answer Header -->
                 <div class="row question-header">
                     <div class="col-xs-2 question-number">
@@ -60,7 +60,7 @@
 
                         <!-- Single Answer -->
                         <div class="row single-answer nopadding active">
-                            
+
                             <!-- Answer 1 -->
                             <div class="row answer-text" id="1">
                                 <div class="col-xs-9 nopadding">
@@ -96,7 +96,7 @@
 
                         <!-- Choose Any -->
                         <div class="row choose-any nopadding">
-                            
+
                             <!-- Answer 1 -->
                             <div class="row answer-text" id="1">
                                 <div class="col-xs-9 nopadding">
@@ -217,11 +217,11 @@
     </div>
 </div>
 
-<script src="scripts/jquery-1.11.3.min.js"></script>
-<script src="scripts/jquery-ui-1.11.4/jquery-ui.js"></script>
-<script src="scripts/expanding.js"></script>
+<script src="../scripts/jquery-1.11.3.min.js"></script>
+<script src="../scripts/jquery-ui-1.11.4/jquery-ui.js"></script>
+<script src="../scripts/expanding.js"></script>
 <script>
-    
+
     $(document).ready(function() {
         $.expanding.initialSelector = "textarea";
         // By default, show multiple-choice and hide the rest.
@@ -246,10 +246,10 @@
             //console.log($(this).parents(".question").attr('id'));
             var index = parseInt($(this).parents(".question").find(".answer-body").find(".active").find(".answer-text").last().attr("id")) + 1;
             //console.log("adding to index: " + index);
-            
-            var answer = 
+
+            var answer =
                 $('<div/>', {
-                    class: 'row answer-text', 
+                    class: 'row answer-text',
                     id: index
                 })
                 .append(
@@ -302,7 +302,7 @@
                     });
 
             $(this).parents(".question").find(".answer-body").find(".active").append(answer).append(separator);
-            $(this).parents(".question").find(".answer-body").find(".active").find("textarea").last().expanding();            
+            $(this).parents(".question").find(".answer-body").find(".active").find("textarea").last().expanding();
         });
 
         //todo: delete answer and re-index answer list
@@ -327,7 +327,7 @@
         });
     });
 
-    
+
 
 
     $(function() {
