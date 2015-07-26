@@ -85,9 +85,17 @@ $(document).ready(function() {
 
     //todo: delete answer and re-index answer list
     $(".question-pool").on("click", ".answer-delete i", function() {
+        
         //save parent object
+        $(this).parents(".answer-text").siblings(".answer-text").each(function(i, val) {
+            var index = i + 1;
+            console.log(val);
+            $(val).attr("id", index);
+            $(val).find("h1").eq(0).text("Answer " + index);
+        });
 
         $(this).parents(".answer-text").remove();
+
     });
 
 

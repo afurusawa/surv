@@ -83,6 +83,8 @@ module.exports = function(grunt) {
     qunit: {
       files: ['test/**/*.html']
     },
+
+    // Watch
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -91,6 +93,14 @@ module.exports = function(grunt) {
       lib_test: {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test', 'qunit']
+      },
+      css: {
+        files: '<%= config.files.css %>',
+        tasks: ['sass']
+      },
+      jade: {
+        files: '<%= config.files.jade %>',
+        tasks: ['jade']
       }
     },
 
