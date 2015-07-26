@@ -83,19 +83,16 @@ $(document).ready(function() {
         $(this).parents(".question").find(".answer-body").find(".active").find("textarea").last().expanding();
     });
 
-    //todo: delete answer and re-index answer list
+    //Delete answer and re-index answer list
     $(".question-pool").on("click", ".answer-delete i", function() {
-        
-        //save parent object
+
         $(this).parents(".answer-text").siblings(".answer-text").each(function(i, val) {
             var index = i + 1;
-            console.log(val);
             $(val).attr("id", index);
             $(val).find("h1").eq(0).text("Answer " + index);
         });
 
         $(this).parents(".answer-text").remove();
-
     });
 
 
@@ -103,6 +100,9 @@ $(document).ready(function() {
     $(".question-add button").on("click", function() {
 
         var index = parseInt($(this).parents(".questionnaire").find(".question").last().attr("id")) + 1;
+        if (!index) {
+            index = 1;
+        }
 
         var question = '<div class="row question nopadding" id="' + index + '">' + '<div class="col-xs-12 nopadding">' + '<div class="row question-header">' + '<div class="col-xs-2 question-number">' + '<h1>Question #' + index + '</h1>' + '</div>' + '<div class="col-xs-8 question-type">' + '<h1>Type:</h1>' + '<div>' + '<select id="question-type">' + '<option value="single-answer" selected>Single Answer</option>' + '<option value="choose-any">Choose Any</option>' + '<option value="true-false">True or False</option>' + '<option value="yes-no">Yes or No</option>' + '</select>' + '</div>' + '</div>' + '<div class="col-xs-2 question-delete">' + '<button>Delete</button>' + '</div>' + '</div>' + '<div class="row question-body nopadding">' + '<div class="col-xs-12 nopadding">' + '<div class="row question-text nopadding">' + '<div class="col-xs-12 nopadding">' + '<textarea class="expanding" placeholder="Type question here"></textarea>' + '</div>' + '</div>' + '<div class="row question-separator nopadding"></div>' + '</div>' + '</div>' + '<div class="row answer-body nopadding">' + '<div class="col-xs-12 nopadding">' + '<div class="row single-answer nopadding active">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<div class="row choose-any nopadding">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<div class="row yes-no nopadding">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">Yes</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">No</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<div class="row true-false nopadding">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">True</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">False</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '</div>' + '</div>' + '<div class="row answer-add">' + '<div class="col-xs-12 nopadding">' + '<button>+ Add Answer</button>' + '</div>' + '</div>' + '</div>' + '</div>';
 
@@ -112,7 +112,25 @@ $(document).ready(function() {
 
     });
 
+    //Delete question to question pool and reindex
+    $(".question-pool").on("click", ".question-delete button", function() {
+        
+        $(this).parents(".question").siblings(".question").each(function(i, val) {
+            var index = i + 1;
+            $(val).attr("id", index);
+            $(val).find("h1").eq(0).text("Question #" + index);
+        });
 
+        $(this).parents(".question").remove();
+    });
+
+
+
+
+
+
+
+    // Miscellaneous 
     $(function() {
         $( "#sortable1, #sortable2" ).sortable({
             placeholder: "sortable-placeholder",
