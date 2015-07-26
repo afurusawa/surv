@@ -27,11 +27,12 @@
               .col-xs-12.nopadding
                 textarea.expanding(placeholder='Type question here')
             .row.question-separator.nopadding
+
         .row.answer-body.nopadding
           .col-xs-12.nopadding
 
             // Single Answer
-            .row.single-answer.nopadding.active
+            #single-answer.row.single-answer.nopadding.active
               // Answer 1
               #1.row.answer-text
                 .col-xs-9.nopadding
@@ -56,7 +57,7 @@
               .row.answer-separator.nopadding
 
             // Choose Any
-            .row.choose-any.nopadding
+            #choose-any.row.choose-any.nopadding
               // Answer 1
               #1.row.answer-text
                 .col-xs-9.nopadding
@@ -81,7 +82,7 @@
               .row.answer-separator.nopadding
 
             // Yes or No
-            .row.yes-no.nopadding
+            #yes-no.row.yes-no.nopadding
               #1.row.answer-text
                 .col-xs-9.nopadding
                   h1 Answer 1
@@ -90,7 +91,6 @@
                   h1 Weight
                   input(type='text', placeholder='#', value='0')
                 .col-xs-1.answer-delete.nopadding
-                  i.fa.fa-times-circle-o
               .row.answer-separator.nopadding
               #1.row.answer-text
                 .col-xs-9.nopadding
@@ -100,11 +100,10 @@
                   h1 Weight
                   input(type='text', placeholder='#', value='0')
                 .col-xs-1.answer-delete.nopadding
-                  i.fa.fa-times-circle-o
               .row.answer-separator.nopadding
 
             // True or False
-            .row.true-false.nopadding
+            #true-false.row.true-false.nopadding
               #1.row.answer-text
                 .col-xs-9.nopadding
                   h1 Answer 1
@@ -113,7 +112,6 @@
                   h1 Weight
                   input(type='text', placeholder='#', value='0')
                 .col-xs-1.answer-delete.nopadding
-                  i.fa.fa-times-circle-o
               .row.answer-separator.nopadding
               #1.row.answer-text
                 .col-xs-9.nopadding
@@ -123,7 +121,6 @@
                   h1 Weight
                   input(type='text', placeholder='#', value='0')
                 .col-xs-1.answer-delete.nopadding
-                  i.fa.fa-times-circle-o
               .row.answer-separator.nopadding
 
         // Add Answer Section

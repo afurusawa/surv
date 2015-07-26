@@ -139,6 +139,7 @@ input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow sp
 	width: 100%;
 	position: fixed !important;
 	background: #ffffff;
+	z-index: 999;
 	padding: 0 25px;
 	margin: 0;
 
