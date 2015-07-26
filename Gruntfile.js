@@ -10,6 +10,31 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+    
+    config: {
+        paths: {
+            public: 'public',
+            js: '<%= config.paths.public %>/js',
+            css: '<%= config.paths.public %>/css',
+            jade: '<%= config.paths.public %>/jade',
+            html: '<%= config.paths.public %>'
+        },
+        files: {
+            js: '<%= config.paths.js %>/**/*.js',
+            js_all: '<%= config.paths.js %>/**/*',
+            js_app: '<%= config.paths.js %>/app.js',
+            js_app_min: '<%= config.paths.js %>/app.min.js',
+            css: '<%= config.paths.css %>/**/*.scss',
+            css_all: '<%= config.paths.css %>/**/*',
+            css_app: '<%= config.paths.css %>/scss/app.scss',
+            css_app_min: '<%= config.paths.css %>/app.css',
+            css_dir: '<%= config.paths.css %>',
+            jade: '<%= config.paths.jade %>/*.jade',
+            jade_master: '<%= config.paths.jade %>/master.jade'
+        }
+    },
+
+
     // Task configuration.
     concat: {
       options: {
@@ -78,27 +103,22 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          "app/views/html/index.html": ["app/views/*.jade"]
+          '<%= config.paths.html %>/app.html' : ['<%= config.files.jade_master %>']
         }
       }
     },
 
     // Sass
     sass: {                              // Task
-      dist: {                            // Target
+      build: {                            // Target
         options: {                       // Target options
           style: 'expanded'
         },
-        files: [{
-          expand: true,
-          cwd: 'styles',
-          src: ['./scss/*.scss'],
-          dest: './css',
-          ext: '.css'
-        }]
+        files: {
+          '<%= config.files.css_app_min %>': ['<%= config.files.css_app %>']
+        }
       }
     }
-
 
   });
 

@@ -1,0 +1,49 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    title Ventari Questionnaire Manager
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='css/app.css')
+    link(rel='stylesheet', href='css/vendor/font-awesome-4.3.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/vendor/bootstrap-3.3.5-dist/css/bootstrap.css')
+    link(rel='stylesheet', href='css/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css')
+  body
+    .container-fluid.fill
+      .row.fill
+
+        // Sidebar Section
+        .col-xs-3.sidebar.nopadding
+          .sidebar-top
+            img(src='assets/logo.png')
+          .sidebar-title Questionnaire Manager
+          .sidebar-section
+            a(href='#')
+              p Inherited Cancer
+            .sidebar-separator
+            a(href='#')
+              p Inherited Condition
+            .sidebar-separator
+
+        // Main Content Section
+        .col-xs-9.main-content
+          // Nav tabs
+          ul#navbar.nav.nav-tabs(role='tablist')
+            li.active(role='presentation')
+              a(href='#question-pool', aria-controls='question-pool', role='tab', data-toggle='tab')
+                span Questions Pool
+            li(role='presentation')
+              a.disable(href='#question-pool', aria-controls='question-pool', role='tab', data-toggle='tab')
+                span Templates
+
+          // Tab panes
+          .tab-content
+            #question-pool.tab-pane.active(role='tabpanel')
+              include questionnaire.jade
+
+    script(src='js/vendor/jquery-1.11.3.min.js')
+    script(src='js/vendor/jquery-ui-1.11.4/jquery-ui.js')
+    script(src='js/vendor/bootstrap.min.js')
+    script(src='js/vendor/expanding.js')
+    script(src='js/questionnaire.js')
+    script.
+      $('#navbar a:first').tab('show') // Select first tab

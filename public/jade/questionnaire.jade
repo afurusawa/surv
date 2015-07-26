@@ -1,0 +1,137 @@
+.questionnaire
+  .question-pool
+    #1.row.question.nopadding
+      .col-xs-12.nopadding
+
+        // Question/Answer Header
+        .row.question-header
+          .col-xs-2.question-number
+            h1 Question #1
+          .col-xs-8.question-type
+            h1 Type:
+            div
+              select#question-type
+                option(value='single-answer', selected='') Single Answer
+                option(value='choose-any') Choose Any
+                option(value='true-false') True or False
+                option(value='yes-no') Yes or No
+          .col-xs-2.question-delete
+            button Delete
+
+        // Question/Answer Section
+        .row.question-body.nopadding
+          .col-xs-12.nopadding
+
+            // Question Input
+            .row.question-text.nopadding
+              .col-xs-12.nopadding
+                textarea.expanding(placeholder='Type question here')
+            .row.question-separator.nopadding
+        .row.answer-body.nopadding
+          .col-xs-12.nopadding
+
+            // Single Answer
+            .row.single-answer.nopadding.active
+              // Answer 1
+              #1.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 1
+                  textarea.expanding(placeholder='Type answer here')
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+              // Answer 2
+              #2.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 2
+                  textarea.expanding(placeholder='Type answer here')
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+
+            // Choose Any
+            .row.choose-any.nopadding
+              // Answer 1
+              #1.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 1
+                  textarea.expanding(placeholder='Type answer here')
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+              // Answer 2
+              #2.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 2
+                  textarea.expanding(placeholder='Type answer here')
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+
+            // Yes or No
+            .row.yes-no.nopadding
+              #1.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 1
+                  textarea.expanding.disable(placeholder='Type answer here') Yes
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+              #1.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 2
+                  textarea.expanding.disable(placeholder='Type answer here') No
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+
+            // True or False
+            .row.true-false.nopadding
+              #1.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 1
+                  textarea.expanding.disable(placeholder='Type answer here') True
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+              #1.row.answer-text
+                .col-xs-9.nopadding
+                  h1 Answer 2
+                  textarea.expanding.disable(placeholder='Type answer here') False
+                .col-xs-2.answer-weight.nopadding
+                  h1 Weight
+                  input(type='text', placeholder='#', value='0')
+                .col-xs-1.answer-delete.nopadding
+                  i.fa.fa-times-circle-o
+              .row.answer-separator.nopadding
+
+        // Add Answer Section
+        .row.answer-add
+          .col-xs-12.nopadding
+            button + Add Answer
+            
+  // Add Question Button
+  .question-add
+    .row.nopadding
+      button + Add Question

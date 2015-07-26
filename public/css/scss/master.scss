@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url('../fonts/Gotham/Gotham-Book.otf');
+}
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('../fonts/Gotham/Gotham-Light.otf');
+}
+
+html, body
+{
+  	min-height: 100%;
+    height: 100%;
+    font-family: 'Gotham-Book', Arial, sans-serif !important;
+}
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+.disable {
+	pointer-events: none !important;
+	color: #cccccc !important;
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+a {
+	text-decoration:none;
+}
+
+/* Sidebar */
+.sidebar {
+	height: 100%;
+	position: fixed !important;
+	overflow-y: auto;
+	background-color: #211e20;
+	color: #aeb6b8;
+	font-family: "Gotham-Book", Arial, sans-serif;
+}
+.sidebar-top {
+	width: 100%;
+	background-color: #1c191a;
+	height: 100px;
+}
+.sidebar-top img {
+	padding: 25px;
+	text-align: left;
+	width: 180px;
+}
+.sidebar-title {
+	text-transform: uppercase;
+	padding: 25px;
+	font-size: 16px;
+}
+.sidebar-section p {
+	padding: 15px 25px;
+	font-size: 16px;
+}
+.sidebar-section > a:nth-of-type(1) {
+	color: #4f78ae;
+}
+.sidebar-section > a:nth-of-type(2) {
+	color: #58bca5;
+}
+.sidebar-separator {
+	width: 50px;
+	height: 1px;
+	border-bottom: 1px solid #424041;
+}
+
+/* Nav Bar */
+#navbar {
+	width: 100%;
+	position: fixed !important;
+	background: #ffffff;
+	padding: 0 25px;
+	margin: 0;
+}
+#navbar li {
+	height: 100px;
+	border: 0px;
+	margin: 0 25px;
+}
+#navbar li a {
+	padding: 0;
+	margin-top: 64px;
+	border: 0px;
+    bottom: 0;
+    width: 100%;
+	font-size: 16px;
+	line-height: 31px;
+	color: #1f6791;
+	float: left;
+}
+#navbar li.active > a {
+	width: 100%;
+	border-radius: 0px;
+	border-bottom: 5px solid #1a537e;
+}
+#navbar li a span {
+	 
+}
+
+
+.tab-pane {
+	margin-top: 100px;
+	background-color: #f5f6f8;
+}
+
+/* Main Content */
+.main-content {
+	margin-left: 25%;
+	padding: 0 !important;
+}

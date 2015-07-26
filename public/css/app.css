@@ -1,0 +1,410 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url("../fonts/Gotham/Gotham-Book.otf");
+}
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url("../fonts/Gotham/Gotham-Light.otf");
+}
+html, body {
+  min-height: 100%;
+  height: 100%;
+  font-family: 'Gotham-Book', Arial, sans-serif !important;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
+.disable {
+  pointer-events: none !important;
+  color: #cccccc !important;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  position: fixed !important;
+  overflow-y: auto;
+  background-color: #211e20;
+  color: #aeb6b8;
+  font-family: "Gotham-Book", Arial, sans-serif;
+}
+
+.sidebar-top {
+  width: 100%;
+  background-color: #1c191a;
+  height: 100px;
+}
+
+.sidebar-top img {
+  padding: 25px;
+  text-align: left;
+  width: 180px;
+}
+
+.sidebar-title {
+  text-transform: uppercase;
+  padding: 25px;
+  font-size: 16px;
+}
+
+.sidebar-section p {
+  padding: 15px 25px;
+  font-size: 16px;
+}
+
+.sidebar-section > a:nth-of-type(1) {
+  color: #4f78ae;
+}
+
+.sidebar-section > a:nth-of-type(2) {
+  color: #58bca5;
+}
+
+.sidebar-separator {
+  width: 50px;
+  height: 1px;
+  border-bottom: 1px solid #424041;
+}
+
+/* Nav Bar */
+#navbar {
+  width: 100%;
+  position: fixed !important;
+  background: #ffffff;
+  padding: 0 25px;
+  margin: 0;
+}
+
+#navbar li {
+  height: 100px;
+  border: 0px;
+  margin: 0 25px;
+}
+
+#navbar li a {
+  padding: 0;
+  margin-top: 64px;
+  border: 0px;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+  line-height: 31px;
+  color: #1f6791;
+  float: left;
+}
+
+#navbar li.active > a {
+  width: 100%;
+  border-radius: 0px;
+  border-bottom: 5px solid #1a537e;
+}
+
+.tab-pane {
+  margin-top: 100px;
+  background-color: #f5f6f8;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 25%;
+  padding: 0 !important;
+}
+
+/*** basic styles ***/
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url("../fonts/Gotham/Gotham-Book.otf");
+}
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url("../fonts/Gotham/Gotham-Light.otf");
+}
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url("../fonts/Gotham/Gotham-Medium.otf");
+}
+html, body {
+  min-height: 100%;
+  height: 100%;
+  font-family: 'Gotham-Book', Arial, sans-serif !important;
+  background-color: #f5f6f8 !important;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
+.disable {
+  pointer-events: none !important;
+  color: #cccccc !important;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.hide {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  text-transform: uppercase;
+}
+
+button:hover {
+  opacity: .7;
+}
+
+input, textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+/*** custom checkboxes ***/
+input[type=checkbox] {
+  display: none;
+}
+
+/* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before {
+  content: "\f096";
+}
+
+/* unchecked icon */
+input[type=checkbox] + label:before {
+  letter-spacing: 10px;
+}
+
+/* space between checkbox and label */
+input[type=checkbox]:checked + label:before {
+  content: "\f046";
+}
+
+/* checked icon */
+input[type=checkbox]:checked + label:before {
+  letter-spacing: 5px;
+}
+
+/* allow space for check mark */
+.sortable-placeholder {
+  height: 150px;
+  background-color: #eeeeee;
+}
+
+.survey-question {
+  height: 100%;
+}
+
+.list {
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 25px;
+}
+
+.answers {
+  width: 100%;
+  padding: 20px;
+}
+
+.answers div {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+i {
+  padding: 5px;
+}
+
+/* Question Pool */
+.question-pool {
+  width: 100%;
+  padding: 40px;
+}
+
+.question-pool h1 {
+  font-size: 13px;
+  color: #aeb6b8;
+  text-transform: uppercase;
+  display: inline;
+}
+
+.question-type div {
+  display: inline;
+  width: 120px;
+  background: url(../assets/down-arrow.png) no-repeat right transparent;
+}
+
+.question-type select {
+  background: transparent;
+  font-size: 13px;
+  color: #1f6791;
+  border: 0;
+  width: 125px;
+  outline: none;
+}
+
+.question-delete {
+  text-align: right;
+}
+
+.question-delete button {
+  color: #d0503f;
+  font-size: 13px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.question-header {
+  padding: 10px 0;
+}
+
+.question-body {
+  background-color: #ffffff;
+}
+
+.question-text textarea {
+  width: 100%;
+  height: 22px;
+  padding: 25px;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: 'Gotham-Medium', Arial, sans-serif !important;
+}
+
+.question-separator {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #efefef;
+  background-color: #ffffff;
+}
+
+.question-add {
+  width: 100%;
+  padding: 0 40px 40px 40px;
+}
+
+.question-add button {
+  border-radius: 3px;
+  border: 1px solid #1a537e;
+  font-size: 13px;
+  color: #1f6791;
+  padding: 15px 20px;
+  text-transform: uppercase;
+}
+
+.answer-body {
+  background-color: #ffffff;
+}
+
+.answer-text {
+  margin: 0 !important;
+  padding: 25px !important;
+}
+
+.answer-text textarea {
+  width: 100%;
+  height: 22px;
+  border: 0;
+  padding: 5px 0;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: 'Gotham-Book', Arial, sans-serif !important;
+}
+
+.answer-weight {
+  text-align: center;
+}
+
+.answer-weight input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 5px 0;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: 'Gotham-Book', Arial, sans-serif !important;
+  text-align: center;
+}
+
+.answer-delete {
+  text-align: center;
+}
+
+.answer-delete i {
+  color: #d0503f;
+  height: 100%;
+  font-size: 22px;
+  line-height: 1.0em;
+  padding: 10px 0;
+  position: absolute;
+  vertical-align: middle;
+  text-align: right;
+  cursor: pointer;
+}
+
+.answer-delete i:hover {
+  opacity: .7;
+}
+
+.answer-separator {
+  display: block;
+  width: 15%;
+  height: 1px;
+  border-bottom: 1px solid #efefef;
+  background-color: #ffffff;
+}
+
+.answer-add {
+  padding: 25px;
+  margin: 0 !important;
+  background-color: #ffffff;
+}
+
+.answer-add button {
+  color: #1f6791;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+/*# sourceMappingURL=app.css.map */
