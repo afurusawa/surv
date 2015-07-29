@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/vendor/font-awesome-4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+
+<ul id="sortable" class="question-pool connectedSortable"><li class="question ui-state-default" id='item1'>
+
+<ul id="sortable" class="question-pool connectedSortable">
+
+    <!-- Question 1 -->
+    <li class="survey-question ui-state-default" id='item1'>
+        <div class="question">
+            <i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>
+        </div>
+        <div class="answers">
+            <div class="answers-list" id="item1">
+                <!-- Needs to be multiple choice where either one or more is selectable -->
+                <div class="list">
+                    <input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                    <input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                </div>
+                <button onClick="addAnswer(this.parentElement)">add more options</button>
+            </div>
+        </div>
+    </li>
+
+    <!-- Question 2 -->
+    <li class="survey-question ui-state-default" id='item1'>
+        <div class="question">
+            <i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>
+        </div>
+        <div class="answers">
+
+            <div class="answers-list" id="item2">
+                <!-- Needs to be multiple choice where either one or more is selectable -->
+                <div class="list">
+                    <input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                    <input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>
+                </div>
+                <button onClick="addAnswer(this.parentElement)">add more options</button>
+            </div>
+        </div>
+    </li>
+
+    <!-- Likert Scale -->
+    <li class="survey-question ui-state-default" id='item4'>
+        <div class="question">
+            <i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>
+        </div>
+        <div class="answers">
+
+            <table class="">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>least?</td>
+                    <td><input type="radio" value="1" name="something"/></td>
+                    <td><input type="radio" value="2" name="something"/></td>
+                    <td><input type="radio" value="3" name="something"/></td>
+                    <td><input type="radio" value="4" name="something"/></td>
+                    <td><input type="radio" value="5" name="something"/></td>
+                    <td>most</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </li>
+
+
+    <!-- True or False -->
+    <li class="survey-question ui-state-default" id='item4'>
+        <div class="question">
+            <i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>
+        </div>
+        <div class="answers">
+            <form action="">
+                <input type="radio" name="binary" value="true">True<br>
+                <input type="radio" name="binary" value="false">False
+            </form>
+        </div>
+    </li>
+
+    <!-- Yes or No -->
+    <li class="survey-question ui-state-default" id='item4'>
+        <div class="content">
+            <div class="question">
+                <i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>
+            </div>
+            <div class="answers">
+                <form action="">
+                    <input type="radio" name="binary" value="true">Yes<br>
+                    <input type="radio" name="binary" value="false">No
+                </form>
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<script src="../js/vendor/jquery-1.11.3.min.js"></script>
+<script src="../js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $( "#sortable1, #sortable2" ).sortable({
+            placeholder: "sortable-placeholder",
+            tolerance: "pointer",
+            connectWith: ".connectedSortable",
+            update : function () {
+                var order1 = $('#sortable').sortable('toArray').toString();
+                //alert("Order 1:"+order1);
+            },
+            start: function(event, ui){
+                $(ui.item).height(20);
+            }
+        }).disableSelection();
+    });
+
+    // Slide toggle
+    $(".fa-angle-up").on("click", function() {
+        $(this).parent().parent().children('div').eq(1).slideUp(400);
+        $(this).hide().siblings('.fa-angle-down').show();
+    });
+    $('.fa-angle-down').on('click', function() {
+        $(this).parent().parent().children('div').eq(1).slideDown(400);
+        $(this).hide().siblings('.fa-angle-up').show();
+    });
+
+
+    $('#addSurvey').click(function() {
+        console.log('adding new survey to list');
+
+        // Create Q/A
+        //var
+
+        // Append to list
+//        $('#sortable1').append();
+    });
+
+    // Create multipleChoice
+
+
+    // Change Answer Type
+    $(document).ready(function() {
+        $("li").click(function(event) {
+            //alert(event.target.id);
+        });
+    });
+    //document.getElementById("myText").readOnly = true;
+
+
+    $('#addQuestion').on("click", function() {
+        console.log($("#questionType option:selected").val());
+        createQuestion($("#questionType option:selected").val());
+    })
+
+
+    function createQuestion(questionType) {
+        if (questionType == "single") {
+            $('#sortable1').append('<li class="survey-question ui-state-default" id="item1">'
+                    + '<div class="question">'
+                    + '<i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>'
+                    + '</div>'
+                    + '<div class="answers">'
+                    + '<div class="answers-list" id="item1">'
+                    + '<div class="list">'
+                    + '<input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>'
+                    + '<input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>'
+                    + '</div>'
+                    + '<button onClick="addAnswer(this.parentElement)">add more options</button>'
+                    + '</div>'
+                    + '</div>'
+                    + '</li>');
+        }
+        else if (questionType == "choose") {
+            $('#sortable1').append('<li class="survey-question ui-state-default" id="item1">'
+                    + '<div class="question">'
+                    + '<i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>'
+                    + '</div>'
+                    + '<div class="answers">'
+                    + '<div class="answers-list" id="item1">'
+                    + '<div class="list">'
+                    + '<input type="text" name="answer1" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>'
+                    + '<input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br>'
+                    + '</div>'
+                    + '<button onClick="addAnswer(this.parentElement)">add more options</button>'
+                    + '</div>'
+                    + '</div>'
+                    + '</li>');
+        }
+        else if (questionType == "likert") {
+            $('#sortable1').append('<li class="survey-question ui-state-default" id="item4">'
+                + '<div class="question">'
+                + '<i class="fa fa-sort"></i><input type="text" name="question1" placeholder="question" value=""><i class="fa fa-angle-up"></i><i class="fa fa-angle-down" style="display:none;"></i>'
+                + '</div>'
+                + '<div class="answers">'
+                + '<table class="">'
+                + '<thead>'
+                + '<tr>'
+                + '<th></th>'
+                + '<th>1</th>'
+                + '<th>2</th>'
+                + '<th>3</th>'
+                + '<th>4</th>'
+                + '<th>5</th>'
+                + '<th></th>'
+                + '</tr>'
+                + '</thead>'
+                + '<tbody>'
+                + '<tr>'
+                + '<td>least?</td>'
+                + '<td><input type="radio" value="1" name="something"/></td>'
+                + '<td><input type="radio" value="2" name="something"/></td>'
+                + '<td><input type="radio" value="3" name="something"/></td>'
+                + '<td><input type="radio" value="4" name="something"/></td>'
+                + '<td><input type="radio" value="5" name="something"/></td>'
+                + '<td>most</td>'
+                + '</tr>'
+                + '</tbody>'
+                + '</table>'
+                + '</div>'
+                + '</li>');
+        }
+    }
+
+    // need to get the id of the 'li' so I can add to the answer-list
+    function addAnswer(answerList) {
+
+        //get index
+
+        $(answerList).children('.list').append('<input type="text" name="answer2" placeholder="answer" value=""><input type="text" name="weight" placeholder="weight" value=""><br/>');
+    }
+
+    function buildAnswer() {
+        var result = document.createElement()
+    }
+
+</script>
+</body>
+</html>

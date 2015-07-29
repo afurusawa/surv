@@ -6,208 +6,211 @@
 
     <title>Ventari Questionnaire Manager</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="css/vendor/font-awesome-4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/vendor/bootstrap-3.3.5-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/app.css"/>
+    <link rel="stylesheet" href="../css/vendor/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/vendor/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
 
 </head>
 <body>
 
 <div class="questionnaire">
-    <div class="question-pool">
-        <div class="row question nopadding" id="1">
-            <div class="col-xs-12 nopadding">
+    <ul class="question-pool connectedSortable" id="sortable">
+        <li class="question" id="1">
 
-                <!-- Question/Answer Header -->
-                <div class="row question-header">
-                    <div class="col-xs-2 question-number">
-                        <h1>Question #1</h1>
-                    </div>
-                    <div class="col-xs-8 question-type">
-                        <h1>Type:</h1>
-                        <div>
-                            <select id="question-type">
-                                <option value="single-answer" selected>Single Answer</option>
-                                <option value="choose-any">Choose Any</option>
-                                <option value="true-false">True or False</option>
-                                <option value="yes-no">Yes or No</option>
-                            </select>
+            <div class="row nopadding" id="1">
+                <div class="col-xs-12 nopadding">
+
+                    <!-- Question/Answer Header -->
+                    <div class="row question-header">
+                        <div class="col-xs-2 question-number">
+                            <h1>Question #1</h1>
+                        </div>
+                        <div class="col-xs-8 question-type">
+                            <h1>Type:</h1>
+                            <div>
+                                <select id="question-type">
+                                    <option value="single-answer" selected>Single Answer</option>
+                                    <option value="choose-any">Choose Any</option>
+                                    <option value="true-false">True or False</option>
+                                    <option value="yes-no">Yes or No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 question-delete">
+                            <button>Delete</button>
                         </div>
                     </div>
-                    <div class="col-xs-2 question-delete">
-                        <button>Delete</button>
+
+
+                    <!-- Question/Answer Section -->
+                    <div class="row question-body nopadding">
+                        <div class="col-xs-12 nopadding">
+
+                            <!-- Question Input -->
+                            <div class="row question-text nopadding">
+                                <div class="col-xs-12 nopadding">
+                                    <textarea class="expanding" placeholder="Type question here"></textarea>
+                                </div>
+                            </div>
+                            <div class="row question-separator nopadding"></div>
+                        </div>
                     </div>
+
+                    <div class="row answer-body nopadding">
+                        <div class="col-xs-12 nopadding">
+
+                            <!-- Single Answer -->
+                            <div class="row single-answer nopadding active">
+
+                                <!-- Answer 1 -->
+                                <div class="row answer-text" id="1">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 1</h1>
+                                        <textarea class="expanding" placeholder="Type answer here"></textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+
+                                <!-- Answer 2 -->
+                                <div class="row answer-text" id="2">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 2</h1>
+                                        <textarea class="expanding" placeholder="Type answer here"></textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+                            </div>
+
+                            <!-- Choose Any -->
+                            <div class="row choose-any nopadding">
+
+                                <!-- Answer 1 -->
+                                <div class="row answer-text" id="1">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 1</h1>
+                                        <textarea class="expanding" placeholder="Type answer here"></textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+
+                                <!-- Answer 2 -->
+                                <div class="row answer-text" id="2">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 2</h1>
+                                        <textarea class="expanding" placeholder="Type answer here"></textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+                            </div>
+
+                            <!-- Yes or No -->
+                            <div class="row yes-no nopadding">
+                                <div class="row answer-text" id="1">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 1</h1>
+                                        <textarea class="expanding disable" placeholder="Type answer here">Yes</textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+                                <div class="row answer-text" id="1">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 2</h1>
+                                        <textarea class="expanding disable" placeholder="Type answer here">No</textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+                            </div>
+
+                            <!-- True or False -->
+                            <div class="row true-false nopadding">
+                                <div class="row answer-text" id="1">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 1</h1>
+                                        <textarea class="expanding disable" placeholder="Type answer here">True</textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+                                <div class="row answer-text" id="1">
+                                    <div class="col-xs-9 nopadding">
+                                        <h1>Answer 2</h1>
+                                        <textarea class="expanding disable" placeholder="Type answer here">False</textarea>
+                                    </div>
+                                    <div class="col-xs-2 answer-weight nopadding">
+                                        <h1>Weight</h1>
+                                        <input type="text" placeholder="#" value="0">
+                                    </div>
+                                    <div class="col-xs-1 answer-delete nopadding">
+                                        <i class="fa fa-times-circle-o"></i>
+                                    </div>
+                                </div>
+                                <div class="row answer-separator nopadding"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Add Answer Section -->
+                    <div class="row answer-add">
+                        <div class="col-xs-12 nopadding">
+                            <button>+ Add Answer</button>
+                        </div>
+                    </div>
+
+
                 </div>
-
-
-                <!-- Question/Answer Section -->
-                <div class="row question-body nopadding">
-                    <div class="col-xs-12 nopadding">
-
-                        <!-- Question Input -->
-                        <div class="row question-text nopadding">
-                            <div class="col-xs-12 nopadding">
-                                <textarea class="expanding" placeholder="Type question here"></textarea>
-                            </div>
-                        </div>
-                        <div class="row question-separator nopadding"></div>
-                    </div>
-                </div>
-
-                <div class="row answer-body nopadding">
-                    <div class="col-xs-12 nopadding">
-
-                        <!-- Single Answer -->
-                        <div class="row single-answer nopadding active">
-
-                            <!-- Answer 1 -->
-                            <div class="row answer-text" id="1">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 1</h1>
-                                    <textarea class="expanding" placeholder="Type answer here"></textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-
-                            <!-- Answer 2 -->
-                            <div class="row answer-text" id="2">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 2</h1>
-                                    <textarea class="expanding" placeholder="Type answer here"></textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-                        </div>
-
-                        <!-- Choose Any -->
-                        <div class="row choose-any nopadding">
-
-                            <!-- Answer 1 -->
-                            <div class="row answer-text" id="1">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 1</h1>
-                                    <textarea class="expanding" placeholder="Type answer here"></textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-
-                            <!-- Answer 2 -->
-                            <div class="row answer-text" id="2">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 2</h1>
-                                    <textarea class="expanding" placeholder="Type answer here"></textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-                        </div>
-
-                        <!-- Yes or No -->
-                        <div class="row yes-no nopadding">
-                            <div class="row answer-text" id="1">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 1</h1>
-                                    <textarea class="expanding disable" placeholder="Type answer here">Yes</textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-                            <div class="row answer-text" id="1">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 2</h1>
-                                    <textarea class="expanding disable" placeholder="Type answer here">No</textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-                        </div>
-
-                        <!-- True or False -->
-                        <div class="row true-false nopadding">
-                            <div class="row answer-text" id="1">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 1</h1>
-                                    <textarea class="expanding disable" placeholder="Type answer here">True</textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-                            <div class="row answer-text" id="1">
-                                <div class="col-xs-9 nopadding">
-                                    <h1>Answer 2</h1>
-                                    <textarea class="expanding disable" placeholder="Type answer here">False</textarea>
-                                </div>
-                                <div class="col-xs-2 answer-weight nopadding">
-                                    <h1>Weight</h1>
-                                    <input type="text" placeholder="#" value="0">
-                                </div>
-                                <div class="col-xs-1 answer-delete nopadding">
-                                    <i class="fa fa-times-circle-o"></i>
-                                </div>
-                            </div>
-                            <div class="row answer-separator nopadding"></div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Add Answer Section -->
-                <div class="row answer-add">
-                    <div class="col-xs-12 nopadding">
-                        <button>+ Add Answer</button>
-                    </div>
-                </div>
-
-
-            </div>
-        </div> <!-- question-1 -->
-    </div>
+            </div> <!-- question-1 -->
+        </li>
+    </ul>
 
     <!-- Add Question Button -->
     <div class="question-add">
@@ -217,9 +220,9 @@
     </div>
 </div>
 
-<script src="js/vendor/jquery-1.11.3.min.js"></script>
-<script src="js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>
-<script src="js/vendor/expanding.js"></script>
+<script src="../js/vendor/jquery-1.11.3.min.js"></script>
+<script src="../js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>
+<script src="../js/vendor/expanding.js"></script>
 <script>
 
     $(document).ready(function() {
@@ -331,12 +334,12 @@
 
 
     $(function() {
-        $( "#sortable1, #sortable2" ).sortable({
+        $( "#sortable" ).sortable({
             placeholder: "sortable-placeholder",
             tolerance: "pointer",
             connectWith: ".connectedSortable",
             update : function () {
-                var order1 = $('#sortable1').sortable('toArray').toString();
+                var order1 = $('#sortable').sortable('toArray').toString();
                 //alert("Order 1:"+order1);
             },
             start: function(event, ui){

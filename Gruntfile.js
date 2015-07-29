@@ -5,12 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    
+
     config: {
         paths: {
             public: 'public',
@@ -20,7 +15,7 @@ module.exports = function(grunt) {
             html: '<%= config.paths.public %>'
         },
         files: {
-            js: '<%= config.paths.js %>/**/*.js',
+            js: '<%= config.paths.js %>/*.js',
             js_all: '<%= config.paths.js %>/**/*',
             js_app: '<%= config.paths.js %>/app.js',
             js_app_min: '<%= config.paths.js %>/app.min.js',
@@ -46,15 +41,17 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
+
     uglify: {
       options: {
-        banner: '<%= banner %>'
+        mangle: false
       },
       dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        src: ['<%= config.paths.js %>/questionnaire.js', '<%= config.paths.js %>/questionServer.js'],
+        dest: '<%= config.paths.js %>/app.js'
       }
     },
+
     jshint: {
       options: {
         curly: true,
