@@ -175,20 +175,8 @@
 .answer-delete {
     text-align: center;
 
-    i {
-        color: #d0503f;
-        height: 100%;
-        font-size: 22px;
-        line-height: 1.0em;
-        padding: 10px 0; 
-        position: absolute;
-        vertical-align: middle;
-        text-align: right;
-        cursor: pointer;
-
-        &:hover {
-            opacity: .7;
-        }
+    img:hover {
+        transform: scale(1.2);
     }
 }
 

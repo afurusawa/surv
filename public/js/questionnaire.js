@@ -107,8 +107,8 @@ $(document).ready(function() {
                     class: 'col-xs-1 answer-delete nopadding'
                 })
                 .append(
-                    $('<i/>', {
-                        class: 'fa fa-times-circle-o'
+                    $('<img/>', {
+                        src: 'assets/button-delete.png'
                     })
                 )
             );
@@ -123,7 +123,7 @@ $(document).ready(function() {
     });
 
     //Delete answer and reindex answer list
-    $(".question-pool").on("click", ".answer-delete i", function() {
+    $(".question-pool").on("click", ".answer-delete img", function() {
 
         var type = $(this).parents(".question").find(".answer-body").find(".active").attr("id");
         var header = "0";

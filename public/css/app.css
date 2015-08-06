@@ -365,19 +365,8 @@ input[type=checkbox]:checked + label:before {
 .answer-delete {
   text-align: center;
 }
-.answer-delete i {
-  color: #d0503f;
-  height: 100%;
-  font-size: 22px;
-  line-height: 1.0em;
-  padding: 10px 0;
-  position: absolute;
-  vertical-align: middle;
-  text-align: right;
-  cursor: pointer;
-}
-.answer-delete i:hover {
-  opacity: .7;
+.answer-delete img:hover {
+  transform: scale(1.2);
 }
 
 .answer-separator {
