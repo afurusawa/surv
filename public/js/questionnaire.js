@@ -1,16 +1,20 @@
 $(document).ready(function($) {
 
+    $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+
     $("#sortable").sortable({
         placeholder: "sortable-placeholder",
         tolerance: "pointer",
         connectWith: ".connectedSortable",
+        start: function(event, ui){
+            ui.placeholder.height(ui.item.height());
+
+            console.log(ui.item.height());
+        },
         update : function () {
             var order1 = $('#sortable').sortable('toArray').toString();
             //alert("Order 1:"+order1);
             reindexQuestionList();
-        },
-        start: function(event, ui){
-            $(ui.item).height(20);
         }
     });
 
@@ -117,6 +121,10 @@ $(document).ready(function($) {
 
         $(this).parents(".question").find(".answer-body").find(".active").append(answer).append(separator);
         $(this).parents(".question").find(".answer-body").find(".active").find("textarea").last().expanding();
+
+        $('html, body').animate({
+            scrollTop: $(window).scrollTop() + 100
+        });
     });
 
     //Delete answer and reindex answer list
@@ -150,6 +158,7 @@ $(document).ready(function($) {
     $(".question-add button").on("click", function() {
 
         var index = parseInt($(this).parents(".questionnaire").find(".question").last().attr("id")) + 1;
+        console.log("adding as " + index);
         if (!index) {
             index = 1;
         }
@@ -159,7 +168,7 @@ $(document).ready(function($) {
         $(this).parents(".questionnaire").find(".question-pool").append(question);
         $(this).parents(".questionnaire").find(".question").last().find("textarea").expanding();
         $(this).parents(".questionnaire").find(".question").last().find(".single-answer").show().addClass("active").siblings().removeClass("active").hide();
-
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
     });
 
     //Delete question to question pool and reindex
@@ -171,7 +180,11 @@ $(document).ready(function($) {
             $(val).find("h1").eq(0).text("Question #" + index);
         });
 
-        $(this).parents(".question").remove();
+        var $this = $(this);
+        $(this).parents(".question").slideUp("800", function() {
+            $this.parents(".question").remove();
+        })
+
     });
 
 
