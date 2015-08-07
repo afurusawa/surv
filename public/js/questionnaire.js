@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function($) {
 
-    $( "#sortable" ).sortable({
+    $("#sortable").sortable({
         placeholder: "sortable-placeholder",
         tolerance: "pointer",
         connectWith: ".connectedSortable",
@@ -8,14 +8,11 @@ $(document).ready(function() {
             var order1 = $('#sortable').sortable('toArray').toString();
             //alert("Order 1:"+order1);
             reindexQuestionList();
-
-
-
         },
         start: function(event, ui){
             $(ui.item).height(20);
         }
-    }).disableSelection();
+    });
 
     function reindexQuestionList() {
 
@@ -167,7 +164,7 @@ $(document).ready(function() {
 
     //Delete question to question pool and reindex
     $(".question-pool").on("click", ".question-delete button", function() {
-        
+
         $(this).parents(".question").siblings(".question").each(function(i, val) {
             var index = i + 1;
             $(val).attr("id", index);
@@ -194,7 +191,7 @@ $(document).ready(function() {
         }
         else {
             $(this).removeClass("invalid-input");
-        }     
+        }
     });
 
 

@@ -189,50 +189,46 @@ function populateQuestionnaire() {
     // Get questionnaire data. Currently commented out because I'm testing with static data (see questionnaireData at top).
     //$.get( "/api/question?$expand=Options", function(data) {
     //    questionnaireData = data;
+
+
+        // Clear out questionnaire
+        $(".question-pool").empty();
+        var qdata = questionnaireData;
+
+        // Repopulate questionnaire
+        for (i = 0; i < qdata.length; i++) {
+
+            // Retrieve question
+            var questionText = qdata[i].text;
+            var answers = qdata[i].options;
+
+            // Create the question
+            addQuestion(i+1, questionText, answers);
+        }
     //});
-
-    // Clear out questionnaire
-    $(".question-pool").empty();
-
-    // Convert JSON into object
-    var qdata = JSON.parse(questionnaireData);
-
-    // Repopulate questionnaire
-    for (i = 0; i < qdata.length; i++) {
-
-        // Retrieve question
-        var question = qdata[i].text;
-        var answers = qdata[i].options;
-
-        // Create the question
-        addQuestion(i+1, answers);
-
-    }
 }
 
 // Index is the "priority" and "id" of a question, representing its order in the questionnaire and uniquely identifies it
-function addQuestion(index, answers) {
+function addQuestion(index, questionText, answers) {
 
     if (!index) {
         index = 1;
     }
 
-    var firstHalf = '<li class="question ui-state-default" id="' + index + '"><div class="row nopadding">' + '<div class="col-xs-12 nopadding">' + '<div class="row question-header">' + '<div class="col-xs-2 question-number">' + '<h1>Question #' + index + '</h1>' + '</div>' + '<div class="col-xs-8 question-type">' + '<h1>Type:&nbsp;</h1>' + '<div>' + '<select id="question-type">' + '<option value="single-answer" selected>Single Answer</option>' + '<option value="choose-any">Choose Any</option>' + '<option value="true-false">True or False</option>' + '<option value="yes-no">Yes or No</option>' + '</select>' + '</div>' + '</div>' + '<div class="col-xs-2 question-delete">' + '<button>Delete</button>' + '</div>' + '</div>' + '<div class="row question-body nopadding">' + '<div class="col-xs-12 nopadding">' + '<div class="row question-text nopadding">' + '<div class="col-xs-12 nopadding">' + '<textarea class="expanding" placeholder="Type question here"></textarea>' + '</div>' + '</div>' + '<div class="row question-separator nopadding"></div>' + '</div>' + '</div>' + '<div class="row answer-body nopadding">' + '<div class="col-xs-12 nopadding">' + '<div class="row single-answer nopadding active" id="single-answer">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<div class="row choose-any nopadding" id="choose-any">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Option 1</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Option 2</h1>' + '<textarea class="expanding" placeholder="Type answer here"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding">' + '<i class="fa fa-times-circle-o"></i>' + '</div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<div class="row yes-no nopadding" id="yes-no">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">Yes</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">No</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<div class="row true-false nopadding" id="true-false">' + '<div class="row answer-text" id="1">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">True</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div class="row answer-text" id="2">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea class="expanding disable" placeholder="Type answer here">False</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '</div>' + '</div>' + '<div class="row answer-add">' + '<div class="col-xs-12 nopadding">' + '<button>+ Add Answer</button>' + '</div>' + '</div>' + '</div>' + '</div></li>';
-    var answerSection = addAnswer(answers, )
-    var secondHalf = 
+    var first = '<li id="' + index + '" class="question ui-state-default">' + '<div class="row nopadding">' + '<div class="col-xs-12 nopadding">' + '<!-- Question/Answer Header-->' + '<div class="row question-header">' + '<div class="col-xs-2 question-number">' + '<h1>Question #' + index + '</h1>' + '</div>' + '<div class="col-xs-8 question-type">' + '<h1>Type:&nbsp;</h1>' + '<div>' + '<select id="question-type">' + '<option value="single-answer" selected>Single Answer</option>' + '<option value="choose-any">Choose Any</option>' + '<option value="true-false">True or False</option>' + '<option value="yes-no">Yes or No</option>' + '</select>' + '</div>' + '</div>' + '<div class="col-xs-2 question-delete">' + '<button>Delete</button>' + '</div>' + '</div>' + '<!-- Question/Answer Section-->' + '<div class="row question-body nopadding">' + '<div class="col-xs-12 nopadding">' + '<!-- Question Input-->' + '<div class="row question-text nopadding">' + '<div class="col-xs-12 nopadding">' + '<textarea placeholder="Type question here" class="expanding">' + questionText + '</textarea>' + '</div>' + '</div>' + '<div class="row question-separator nopadding"></div>' + '</div>' + '</div>' + '<div class="row answer-body nopadding">' + '<div class="col-xs-12 nopadding">' + '<!-- Single Answer-->' + '<div id="single-answer" class="row single-answer nopadding active">';
 
-    // Build HTML
-    for (i = 0; i < qdata.length; i++) {
+    var last = '</div>' + '<!-- Choose Any-->' + '<div id="choose-any" class="row choose-any nopadding">' + '<!-- Answer 1-->' + '<div id="1" class="row answer-text">' + '<div class="col-xs-9 nopadding">' + '<h1>Option 1</h1>' + '<textarea placeholder="Type answer here" class="expanding"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"><img src="assets/button-delete.png"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<!-- Answer 2-->' + '<div id="2" class="row answer-text">' + '<div class="col-xs-9 nopadding">' + '<h1>Option 2</h1>' + '<textarea placeholder="Type answer here" class="expanding"></textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"><img src="assets/button-delete.png"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<!-- Yes or No-->' + '<div id="yes-no" class="row yes-no nopadding">' + '<div id="1" class="row answer-text">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea placeholder="Type answer here" class="expanding disable">Yes</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div id="1" class="row answer-text">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea placeholder="Type answer here" class="expanding disable">No</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '<!-- True or False-->' + '<div id="true-false" class="row true-false nopadding">' + '<div id="1" class="row answer-text">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 1</h1>' + '<textarea placeholder="Type answer here" class="expanding disable">True</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '<div id="1" class="row answer-text">' + '<div class="col-xs-9 nopadding">' + '<h1>Answer 2</h1>' + '<textarea placeholder="Type answer here" class="expanding disable">False</textarea>' + '</div>' + '<div class="col-xs-2 answer-weight nopadding">' + '<h1>Weight</h1>' + '<input type="text" placeholder="#" value="0">' + '</div>' + '<div class="col-xs-1 answer-delete nopadding"></div>' + '</div>' + '<div class="row answer-separator nopadding"></div>' + '</div>' + '</div>' + '</div>' + '<!-- Add Answer Section-->' + '<div class="row answer-add">' + '<div class="col-xs-12 nopadding">' + '<button>+ Add Answer</button>' + '</div>' + '</div>' + '</div>' + '</div>' + '</li>';
 
-    }
+    var middle = addAnswer(answers, 1);
+
+    var question = first + middle + last;
 
     $(".question-pool").append(question);
     $(".questionnaire").find(".question").last().find("textarea").expanding();
     $(".questionnaire").find(".question").last().find(".single-answer").show().addClass("active").siblings().removeClass("active").hide();
-
 }
 
-// Returns an html string of all the answers
+// Returns an html string of all the answers. Params: answers = array, questionType = int
 function addAnswer(answers, questionType) {
 
     // Initialize and define variables
@@ -240,13 +236,13 @@ function addAnswer(answers, questionType) {
     var header;
     var i;
     var html = '';
-    
+
     // Check if type is Single Answer or Choose Any and change header text as required
     if (type ==  1) {
-        header = "Answer " + index;
+        header = "Answer ";
     }
     else if (type == 2) {
-        header = "Option " + index;
+        header = "Option ";
     }
     else {
         header = "ERROR";
@@ -268,7 +264,7 @@ function addAnswer(answers, questionType) {
                 })
                     .append(
                     $('<h1/>', {
-                        text: header
+                        text: header + index
                     })
                 )
                     .append(
@@ -304,14 +300,14 @@ function addAnswer(answers, questionType) {
                         src: 'assets/button-delete.png'
                     })
                 )
-            );
+            ).prop('outerHTML');
 
         // Append separator
         html +=
             $('<div/>', {
                 class: 'row answer-separator nopadding'
-            });
+            }).prop('outerHTML');
     }
-    
+
     return html;
 }

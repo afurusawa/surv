@@ -148,3 +148,144 @@ var questionnaireData = [
         "surveyId": 1
     }
 ];
+
+
+
+var first =
+    '<li id="' + '1' + '" class="question ui-state-default">' +
+    '<div class="row nopadding">' +
+    '<div class="col-xs-12 nopadding">' +
+    '<!-- Question/Answer Header-->' +
+    '<div class="row question-header">' +
+    '<div class="col-xs-2 question-number">' +
+    '<h1>Question #1</h1>' +
+    '</div>' +
+    '<div class="col-xs-8 question-type">' +
+    '<h1>Type:&nbsp;</h1>' +
+    '<div>' +
+    '<select id="question-type">' +
+    '<option value="single-answer" selected>Single Answer</option>' +
+    '<option value="choose-any">Choose Any</option>' +
+    '<option value="true-false">True or False</option>' +
+    '<option value="yes-no">Yes or No</option>' +
+    '</select>' +
+    '</div>' +
+    '</div>' +
+    '<div class="col-xs-2 question-delete">' +
+    '<button>Delete</button>' +
+    '</div>' +
+    '</div>' +
+    '<!-- Question/Answer Section-->' +
+    '<div class="row question-body nopadding">' +
+    '<div class="col-xs-12 nopadding">' +
+    '<!-- Question Input-->' +
+    '<div class="row question-text nopadding">' +
+    '<div class="col-xs-12 nopadding">' +
+    '<textarea placeholder="Type question here" class="expanding"></textarea>' +
+    '</div>' +
+    '</div>' +
+    '<div class="row question-separator nopadding"></div>' +
+    '</div>' +
+    '</div>' +
+    '<div class="row answer-body nopadding">' +
+    '<div class="col-xs-12 nopadding">' +
+    '<!-- Single Answer-->' +
+    '<div id="single-answer" class="row single-answer nopadding active">';
+
+
+var second =
+    '</div>' +
+    '<!-- Choose Any-->' +
+    '<div id="choose-any" class="row choose-any nopadding">' +
+    '<!-- Answer 1-->' +
+    '<div id="1" class="row answer-text">' +
+    '<div class="col-xs-9 nopadding">' +
+    '<h1>Option 1</h1>' +
+    '<textarea placeholder="Type answer here" class="expanding"></textarea>' +
+    '</div>' +
+    '<div class="col-xs-2 answer-weight nopadding">' +
+    '<h1>Weight</h1>' +
+    '<input type="text" placeholder="#" value="0">' +
+    '</div>' +
+    '<div class="col-xs-1 answer-delete nopadding"><img src="assets/button-delete.png"></div>' +
+    '</div>' +
+    '<div class="row answer-separator nopadding"></div>' +
+    '<!-- Answer 2-->' +
+    '<div id="2" class="row answer-text">' +
+    '<div class="col-xs-9 nopadding">' +
+    '<h1>Option 2</h1>' +
+    '<textarea placeholder="Type answer here" class="expanding"></textarea>' +
+    '</div>' +
+    '<div class="col-xs-2 answer-weight nopadding">' +
+    '<h1>Weight</h1>' +
+    '<input type="text" placeholder="#" value="0">' +
+    '</div>' +
+    '<div class="col-xs-1 answer-delete nopadding"><img src="assets/button-delete.png"></div>' +
+    '</div>' +
+    '<div class="row answer-separator nopadding"></div>' +
+    '</div>' +
+    '<!-- Yes or No-->' +
+    '<div id="yes-no" class="row yes-no nopadding">' +
+    '<div id="1" class="row answer-text">' +
+    '<div class="col-xs-9 nopadding">' +
+    '<h1>Answer 1</h1>' +
+    '<textarea placeholder="Type answer here" class="expanding disable">Yes</textarea>' +
+    '</div>' +
+    '<div class="col-xs-2 answer-weight nopadding">' +
+    '<h1>Weight</h1>' +
+    '<input type="text" placeholder="#" value="0">' +
+    '</div>' +
+    '<div class="col-xs-1 answer-delete nopadding"></div>' +
+    '</div>' +
+    '<div class="row answer-separator nopadding"></div>' +
+    '<div id="1" class="row answer-text">' +
+    '<div class="col-xs-9 nopadding">' +
+    '<h1>Answer 2</h1>' +
+    '<textarea placeholder="Type answer here" class="expanding disable">No</textarea>' +
+    '</div>' +
+    '<div class="col-xs-2 answer-weight nopadding">' +
+    '<h1>Weight</h1>' +
+    '<input type="text" placeholder="#" value="0">' +
+    '</div>' +
+    '<div class="col-xs-1 answer-delete nopadding"></div>' +
+    '</div>' +
+    '<div class="row answer-separator nopadding"></div>' +
+    '</div>' +
+    '<!-- True or False-->' +
+    '<div id="true-false" class="row true-false nopadding">' +
+    '<div id="1" class="row answer-text">' +
+    '<div class="col-xs-9 nopadding">' +
+    '<h1>Answer 1</h1>' +
+    '<textarea placeholder="Type answer here" class="expanding disable">True</textarea>' +
+    '</div>' +
+    '<div class="col-xs-2 answer-weight nopadding">' +
+    '<h1>Weight</h1>' +
+    '<input type="text" placeholder="#" value="0">' +
+    '</div>' +
+    '<div class="col-xs-1 answer-delete nopadding"></div>' +
+    '</div>' +
+    '<div class="row answer-separator nopadding"></div>' +
+    '<div id="1" class="row answer-text">' +
+    '<div class="col-xs-9 nopadding">' +
+    '<h1>Answer 2</h1>' +
+    '<textarea placeholder="Type answer here" class="expanding disable">False</textarea>' +
+    '</div>' +
+    '<div class="col-xs-2 answer-weight nopadding">' +
+    '<h1>Weight</h1>' +
+    '<input type="text" placeholder="#" value="0">' +
+    '</div>' +
+    '<div class="col-xs-1 answer-delete nopadding"></div>' +
+    '</div>' +
+    '<div class="row answer-separator nopadding"></div>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '<!-- Add Answer Section-->' +
+    '<div class="row answer-add">' +
+    '<div class="col-xs-12 nopadding">' +
+    '<button>+ Add Answer</button>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</li>';

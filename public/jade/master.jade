@@ -17,7 +17,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
             img(src='assets/logo.png')
           .sidebar-title Questionnaire Manager
           .sidebar-section
-            a(href='#')
+            a(href='#', onclick='populateQuestionnaire()')
               p Inherited Cancer
             .sidebar-separator
             a(href='#')
@@ -45,6 +45,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     script(src='js/vendor/bootstrap.min.js')
     script(src='js/vendor/expanding.js')
     script(src='js/questionnaire.js')
-    //script(src='js/app.js')
+    script(src='js/questionServer.js')
     script.
+      //.noConflict();
       $('#navbar a:first').tab('show') // Select first tab
